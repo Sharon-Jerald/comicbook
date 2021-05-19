@@ -34,6 +34,30 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+td,h3,h6,h2{
+  color:white;
+}
+.s1{
+        position: absolute;
+        top:360px;
+        left: 25%;
+        transform: translate(-50%,-50%);
+        width: 600px;
+        height: 500px;
+       border-radius:5px;
+        box-sizing: border-box;
+        background: rgba(0,0,0,0.5);
+       color:burlywood; 
+    }
+    body {
+  background-image: url('https://wallpaperaccess.com/full/1203451.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+ 
 </head>
 
 <body>
@@ -64,6 +88,7 @@
 
 <div class="container">
     <div class="row">
+    <div class="s1">
         <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 
         <form action="/customerread" method="post">
@@ -76,7 +101,7 @@
 
         {{ csrf_field() }}
 
-        <table class="table table-borderless">
+        <table class="table table-borderless" style="width:570px;">
         
         <tr>
             <td>Name:</td>
@@ -100,12 +125,12 @@
         </tr>
         <tr>
             <td>Phone No.:</td>
-            <td><input name="phone" type="number" class="form-control"></td>
+            <td><input name="phone" type="number" pattern=".{10}" class="form-control"></td>
            
         </tr>
         <tr>
             <td>Mail id:</td>
-            <td><input name="mail" type="text" class="form-control"></td>
+            <td><input name="cmail" type="text" class="form-control"></td>
           
         </tr>
         <tr>
@@ -129,6 +154,7 @@
         </table>
         </form>
         </div>
+        </div>
         <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
         @error('name')
     <div class="alert alert-danger">{{ $message }}</div>
@@ -145,7 +171,7 @@
         @error('phone')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
-        @error('mail')
+        @error('cmail')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
         @error('password')

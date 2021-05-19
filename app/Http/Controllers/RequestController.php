@@ -18,6 +18,11 @@ class RequestController extends Controller
 
     public function abc()
     {
+        $count=RequestbookModel::count();
+        if($count==0)
+        {
+            return view('error');
+        }
         $abc = RequestbookModel::with('customer')->get();
         return view('adminviewrequest',compact('abc'));
     }
@@ -26,12 +31,22 @@ class RequestController extends Controller
     public function index()
     {
         $data = CustomerModel::where('cmail','=', session('LoggedUser'))->first();
+        $count=RequestbookModel::where ('cid','=',$data->id)->count();
+        if($count==0)
+        {
+            return view('error');
+        }
         $rbooks = RequestbookModel::where('cid','=',$data->id)-> with('customer')->get();
         return view('viewrequest',compact('rbooks'));
     }
 
     public function adminindex()
     {
+        $count=RequestbookModel::count();
+        if($count==0)
+        {
+            return view('error');
+        }
         $rbooks=RequestbookModel::all();
 
         return view('adminviewrequest',compact('rbooks'));

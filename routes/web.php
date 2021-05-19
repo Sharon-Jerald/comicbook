@@ -24,6 +24,8 @@ Route::get('/', function () {
 });
 
 
+
+
 route::post('/customerread', [CustomerController::class,'store']);
 
 Route::get('/logout',[CustomerController::class, 'logout']);
@@ -48,6 +50,7 @@ route::get('/rqstbook',[CustomerController::class,'custid']);
 
 Route::get('/home',[CustomerController::class,'dashboard']);
 
+Route::get('/profile',[CustomerController::class,'profile']);
 
 
 route::get('/success',[BookController::class,'success']);
@@ -121,6 +124,9 @@ route::post('/requestdeleteprocess/{id}',[RequestController::class,'destroy']);
 
 
 
+Route::get('/error', function () {
+    return view('error');
+});
 
 Route::get('/success', function () {
     return view('success');

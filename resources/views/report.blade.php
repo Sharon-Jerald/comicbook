@@ -23,16 +23,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/minty/bootstrap.min.css"
     />
-    <style>
-
-body {
-  background-image: url('https://images.unsplash.com/photo-1547555999-14e818e09e33?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-    </style>
+ 
 
 </head>
 
@@ -43,10 +34,7 @@ body {
 
         <!-- Sidebar -->
         
-        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" style=" background-image:url('https://wallpapercave.com/wp/wp4825790.jpg');   " id="accordionSidebar">
-
-
-           
+        
 
           
         <!-- End of Sidebar -->
@@ -66,34 +54,26 @@ body {
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">BOOKSMITH</h1>
+                   <a href="/adminhome"> <h1 class="h3 mb-0 text-gray-800">Booksmith</h1></a>
 
-                        
-                        <a class="nav-link " href="/adminhome" role="button"
-                                aria-haspopup="true">
-                                <button class="btn btn-primary">Home</button>
-                
-                            </a>
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <button class="btn btn-primary">Generate Reports</button>
-                
-                            </a>
-                            <li class="nav-item dropdown no-arrow">
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                              Download
-                                 
-                                </a>
-                            </div>
-                        </li>
-                   
-                    </div>
+<li class="nav-item dropdown no-arrow">
+    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-primary">Generate Reports</button>
 
-                    
+    </a>
+    <!-- Dropdown - User Information -->
+    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+        aria-labelledby="userDropdown">
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+      Download
+         
+        </a>
+    </div>
+</li>
+
+</div>
 
                     <!-- Content Row -->
                     <div class="row" >
@@ -324,7 +304,7 @@ body {
 			
 		</div>
 	</div>     
-    </ul>   
+     
 </div>
 
 </section>

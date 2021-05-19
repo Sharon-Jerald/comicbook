@@ -33,6 +33,30 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <style>
+td,th,h2,h3{
+  color:white;
+}
+.s1{
+        position: absolute;
+        top:330px;
+        left: 33%;
+        transform: translate(-50%,-50%);
+        width: 850px;
+        height: 420px;
+       border-radius:5px;
+        box-sizing: border-box;
+        background: rgba(0,0,0,0.9);
+       color:burlywood; 
+    }
+    body {
+  background-image: url('https://wallpapercave.com/wp/wp3281403.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
 </head>
 
 <body>
@@ -84,10 +108,11 @@
 <br><br><br>
   <div class="container">
 <div class="row">
-<div class="col col-2 col-sm-2 col-md-2 col-lg-2"></div>
+<div class="s1"><br>
+<center><h3>REQUESTED BOOK</h3></center>
 <div class="col col-8 col-sm-8 col-md-8 col-lg-8">
 <center>
-<table class="table ">
+<table class="table " style="width: 800px;">
 <tr>
 <th>CUSTOMER NAME</th>
     <th>NAME</th>
@@ -114,7 +139,7 @@
 <div class="col col-2 col-sm-2 col-md-2 col-lg-2"></div>
 </div>
 </div>
-
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>

@@ -34,6 +34,32 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <style>
+td,h3,h6,h2{
+  color:white;
+}
+.btn {background-color: #e7e7e7; color: white;background: rgba(0,0,0,0.8);}
+{
+        position: absolute;
+        top:300px;
+        left: 25%;
+        transform: translate(-50%,-50%);
+        width: 600px;
+        height: 200px;
+       border-radius:5px;
+        box-sizing: border-box;
+        background: rgba(0,0,0,0.8);
+       color:burlywood; 
+    }
+    body {
+  background-image: url('https://wallpapercave.com/wp/wp1816224.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+  
 </head>
 
 <body>
@@ -63,6 +89,7 @@
   <br><br><br><br><br>
 <div class="container">
     <div class="row">
+    <div class="s1">
     <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 
     <form action="/userlogin" method="post">
@@ -76,7 +103,7 @@
        {{ csrf_field() }}
 
 
-    <table class="table table-borderless">
+    <table class="table table-borderless" style="width: 550px;">
     <tr>
         <td>Username:</td>
         <td><input name="uname" type="text" class="form-control"></td>
@@ -86,12 +113,12 @@
         <td><input name="pass" type="password" class="form-control" ></td>
     </tr>
     <tr>
-        <td><button class="btn btn-success">SUBMIT</button></td>
-        <td><center><a class="btn btn-success"  href="/">CANCEL</a></center></td>
+        <td><button class="btn">SUBMIT</button></td>
+        <td><center><a  href="/"><button class="btn">CANCEL</button></a></center></td>
     </tr>
     </table>
 
-    </form>
+    </form></div>
     </div>
     </div>
 </div>

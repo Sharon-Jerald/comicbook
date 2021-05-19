@@ -40,11 +40,11 @@ td,th,h2{
 }
 .s1{
         position: absolute;
-        top:335px;
-        left: 50%;
+        top:345px;
+        left: 65%;
         transform: translate(-50%,-50%);
         width: 940px;
-        height: 450px;
+        height: 500px;
        border-radius:5px;
         box-sizing: border-box;
         background: rgba(0,0,0,0.8);
@@ -52,7 +52,7 @@ td,th,h2{
     }
     body {
      
-  background-image: url('https://wallpapercave.com/wp/wp8111263.jpg');
+  background-image: url('https://wallpaperaccess.com/full/21199.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

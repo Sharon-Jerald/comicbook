@@ -36,6 +36,8 @@
   ======================================================== -->
 
 <style>
+input[type=text],input[type=file],input[type=number]{
+background-color: #dee3e0;}
 td{
   color:white;
 }
@@ -148,7 +150,7 @@ td{
           </tr>
           <tr>
               <td>Description:</td>
-              <td><input  name="bdescription" type="textarea" class="form-control"></td>
+              <td><input  name="bdescription" type="text" class="form-control"></td>
           </tr>
 
           <tr>

@@ -80,7 +80,7 @@
           </li>
           <li><a class="nav-link scrollto" href="/myorder">My orders</a></li>
           <li><a class="nav-link scrollto" href="/cartlist">Cart</a></li>
-          <li><a class="nav-link scrollto" href="#">Profile</a></li>
+          <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
           <li><a class="getstarted scrollto" href="/logout">Logout</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -105,12 +105,12 @@
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item"  style="background: url(assets/img/slide/slide12.jpg);">
+          <div class="carousel-item"  style="background: url('https://www.teahub.io/photos/full/89-894817_minions-pc-backgrounds-minions-wallpaper-hd-for-iphone.jpg');">
            
           </div>
 
           <!-- Slide 3 -->
-          <div class="carousel-item" style="background: url('https://images.hdqwalls.com/download/spider-man-night-4k-dt-1920x1080.jpg');">
+          <div class="carousel-item" style="background: url('https://images.hdqwalls.com/download/lily-james-in-cinderella-1920x1080.jpg');">
             
           </div>
 

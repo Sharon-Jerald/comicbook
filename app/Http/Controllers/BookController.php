@@ -33,6 +33,11 @@ class BookController extends Controller
      */
     public function index()
     {
+        $count=BookModel::count();
+        if($count==0)
+        {
+            return view('error');
+        }
         $books=BookModel::all();
 
         return view('viewbook',compact('books'));
@@ -161,6 +166,7 @@ class BookController extends Controller
 
     public function search(Request $request)
     {
+        
         $getBname=request('bname');
    
         $books=BookModel::query()
@@ -289,6 +295,12 @@ class BookController extends Controller
 
     function cartlist(){
        $custid= CustomerModel::where('cmail','=', session('LoggedUser'))->first();
+       $count=CartModel::where ('customer_id','=',$custid->id)->count();
+       if($count==0)
+       {
+           return view('error');
+       }
+       
        $customerId=$custid->id;
        $data=DB::table('cart_models')
        ->join('book_models','cart_models.book_id','=','book_models.id') 
@@ -357,6 +369,12 @@ public function order(Request $request)
     }
     function myorder(){
         $data = CustomerModel::where('cmail','=', session('LoggedUser'))->first();
+        $count=OrderModel::where ('cid','=',$data->id)->count();
+        if($count==0)
+        {
+            return view('error');
+        }
+        
         $orders=OrderModel::where('cid','=',$data->id)-> with('customer','book')->get();
         return view('/myorder',compact('orders'));
     }
@@ -364,6 +382,11 @@ public function order(Request $request)
 
     public function vieworder()
     {
+        $count=OrderModel::count();
+        if($count==0)
+        {
+            return view('error');
+        }
         $vieworder = OrderModel::with('customer','book')->get();
         return view('adminvieworder',compact('vieworder'));
     }

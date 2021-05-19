@@ -35,23 +35,24 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
+
 td,th,h2{
   color:white;
 }
 .s1{
         position: absolute;
-        top:450px;
-        left: 50%;
+        top:350px;
+        left: 35%;
         transform: translate(-50%,-50%);
-        width: 1250px;
-        height: 590px;
+        width: 890px;
+        height: 550px;
        border-radius:5px;
         box-sizing: border-box;
         background: rgba(0,0,0,0.9);
        color:burlywood; 
     }
     body {
-  background-image: url('https://images.unsplash.com/photo-1547003016-f98f1b2861b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80');
+  background-image: url('https://wallpaperaccess.com/full/874056.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -110,14 +111,13 @@ td,th,h2{
 <center><h2>BOOK DETAILS</h2></center><BR></BR>
 <div class="col col-8 col-sm-8 col-md-8 col-lg-8">
 <center>
-<table style="width:1200px;" class="table ">
+<table style="width:860px;" class="table ">
 <tr>
     
     <th>NAME</th>
     <th>AUTHOR </th>
-    <th>PUBLISHER</th>
-    <th>GENRE</th>
-    <th>DESCRIPTION</th>
+    
+   
     <th>PRICE</th>
     <th>STOCK</th>
     <th>IMAGE</th>
@@ -129,13 +129,12 @@ td,th,h2{
 
     <td>{{ $book->bname }}</td>
     <td>{{ $book->bauthor }}</td>
-    <td>{{ $book->bpublisher }}</td>
-    <td>{{ $book->bgenre }}</td>
-    <td>{{ $book->bdescription }}</td>
+    
+    
     <td>{{ $book->bprice }}</td>
     <td>{{ $book->bstock }}</td>
     <td><img width="150" height="100" src="{{ URL ::asset('assets/book_img/'.$book->bimage) }}"></td>
-    <td><a class="btn btn-warning" href={{"/editview/".$book->id}}>EDIT</a></td>
+    <td><a class="btn btn-warning" href={{"/editview/".$book->id}}>VIEW</a></td>
     <td> <a class="btn btn-danger"  href={{"/deleteview/".$book->id}}>Remove </a></td>
 
 </tr>

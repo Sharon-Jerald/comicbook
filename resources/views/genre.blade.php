@@ -35,23 +35,27 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
+.btn{
+  background-color: #e0a57e;
+  color: white;background: rgba(0,0,0,0.7);
+}
 td,h2{
   color:white;
 }
 .s1{
         position: absolute;
         top:300px;
-        left: 40%;
+        left: 30%;
         transform: translate(-50%,-50%);
-        width: 600px;
+        width: 450px;
         height: 100px;
        border-radius:5px;
         box-sizing: border-box;
-        background: rgba(0,0,0,0.1);
+        background: rgba(0,0,0,0.0);
        color:burlywood; 
     }
     body {
-  background-image: url('https://wallpapercave.com/wp/Fs4Umml.jpg');
+  background-image: url('https://cdn.statically.io/img/wallpapercart.com/wp-content/uploads/2019/05/Movie-Toy-Story-4-Woody-HD-Wallpaper-scaled.jpg?quality=100&f=auto');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -125,8 +129,8 @@ td,h2{
           </tr>
 
           <tr>
-              <td><center><button class="btn btn-danger">SUBMIT</button></center></td>
-              <td><center><a class="btn btn-danger"  href="/adminhome">CANCEL</a></center></td>
+              <td><center><button class="btn">SUBMIT</button></center></td>
+              <td><center><a href="/adminhome"><button class="btn">CANCEL</button></a></center></td>
           </tr>
           </table>
           </form>

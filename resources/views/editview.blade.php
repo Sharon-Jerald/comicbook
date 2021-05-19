@@ -61,7 +61,7 @@
           <li class="dropdown  active"><a href="#"><span>View</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
             <li><a href="/viewbook">View Books</a></li>
-              <li><a href="/viewrequest">Requested books</a></li>
+              <li><a href="/adminviewrequest">Requested books</a></li>
               
             </ul>
           </li>

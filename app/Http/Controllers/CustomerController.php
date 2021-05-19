@@ -55,6 +55,13 @@ class CustomerController extends Controller
         return view('rqstbook',$data);
     }
 
+    function profile(Request $request)
+    {
+        $customer = ['LoggedUserInfo'=>CustomerModel::where('cmail','=', session('LoggedUser'))->first()];
+               return view('profile',compact('customer'));
+        
+        
+    }
     public function custidedit()
     {
         $data = ['LoggedUserInfo'=>CustomerModel::where('cmail','=', session('LoggedUser'))->first()];
@@ -75,7 +82,7 @@ class CustomerController extends Controller
             'city.required'  => 'The city field is required to be filled',
             'district.required' => 'The district field is required to be filled',
             'phone.required'  => 'The phone no field is required to be filled',
-            'mail.required' => 'The mail id field is required to be filled',
+            'cmail.required' => 'The mail id field is required to be filled',
             'password.required'  => 'The password field is required to be filled',
             'confirmpassword.required' => 'The confirm password field is required to be filled'
           ];
@@ -84,8 +91,8 @@ class CustomerController extends Controller
            'address'=>'required',
            'city'=>'required',
            'district'=>'required',
-           'phone'=>'required|regex:/(01)[0-9]{9}/',
-           'mail'=>'required|email|unique:customer_models',
+           'phone'=>'required',
+           'cmail'=>'required|email|unique:customer_models',
            'password'=>'required|min:5|max:12',
            'confirmpassword'=>'required'
        ], $customMessages);
@@ -96,7 +103,7 @@ class CustomerController extends Controller
         $getCity= request('city');
         $getState= request('district');
         $getPhone=request('phone');
-        $getMail= request('mail');
+        $getMail= request('cmail');
         $getPwd= request('password');
         $getCpwd= request('confirmpassword');
 

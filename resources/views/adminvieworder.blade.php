@@ -33,6 +33,30 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+
+td,th,h2{
+  color:white;
+}
+.s1{
+        position: absolute;
+        top:300px;
+        left: 65%;
+        transform: translate(-50%,-50%);
+        width: 890px;
+        height: 400px;
+       border-radius:5px;
+        box-sizing: border-box;
+        background: rgba(0,0,0,0.9);
+       color:burlywood; 
+    }
+    body {
+  background-image: url('https://wallpaperaccess.com/full/21199.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
 </head>
 
 <body>
@@ -84,10 +108,11 @@
 <br><br><br>
   <div class="container">
 <div class="row">
-<div class="col col-2 col-sm-2 col-md-2 col-lg-2"></div>
+<div class="s1">
+<center><h2>ORDER DETAILS</h2></center><BR>
 <div class="col col-8 col-sm-8 col-md-8 col-lg-8">
 <center>
-<table class="table ">
+<table class="table " style="width: 850px;">
 <tr>
 <th>CUSTOMER NAME</th>
     <th>NAME</th>
@@ -117,7 +142,7 @@
 </div>
 </div>
 
-
+</div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
 </html>
