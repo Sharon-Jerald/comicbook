@@ -194,9 +194,41 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $customer=CustomerModel::find($id);
+        return view('editprofile',compact('customer'));
     }
 
+
+    public function custchangepassword()
+    {
+        $getoldpass=request('oldpass');
+        $getnewpass=request('newpass');
+        $confirmpass=request('cnewpass');
+        $data = LoginModel::where('username','=', session('LoggedUser'))->first();
+        $getemail=$data->username;
+        if($getoldpass==$data->password)
+        {
+            if($getnewpass==$confirmpass)
+            {
+                $change=LoginModel::where('Username','=',$getemail)->update(['Password'=>$getnewpass]); 
+                return redirect('/');
+      
+            }
+            else{
+
+                echo "<script>alert('New Password and Confirm Password must be same');window.location='/home';</script>"; 
+
+            }
+
+        }
+        else
+        {
+            echo "<script>alert('Inputed Old Password is not recognized');window.location='/home';</script>"; 
+
+    
+        }
+
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -206,7 +238,28 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $book=CustomerModel::find($id);
+
+        $getBName= request('cname');
+        $getBAuthor= request('caddress');
+        $getBGenre= request('ccity');
+        $getBPublisher= request('cstate');
+        $getBDescription= request('cphone');
+        $getBImage=request('cmail');
+        
+        
+       $book->cname=$getBName;
+       $book->caddress= $getBAuthor;
+       $book->ccity=$getBGenre;
+       $book->cstate=$getBPublisher;
+       $book->cphone=$getBDescription;
+       $book->cmail=$getBImage;
+       
+
+        $book->save();
+
+
+        return redirect('/profile');
     }
 
     /**

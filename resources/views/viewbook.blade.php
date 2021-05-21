@@ -35,27 +35,28 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
-
 td,th,h2{
   color:white;
 }
 .s1{
         position: absolute;
-        top:350px;
-        left: 35%;
+        top:385px;
+        left: 65%;
         transform: translate(-50%,-50%);
-        width: 890px;
-        height: 550px;
+        width: 900px;
+        height: 600px;
        border-radius:5px;
         box-sizing: border-box;
-        background: rgba(0,0,0,0.9);
-       color:burlywood; 
+        background: rgba(0,0,0,0.8);
+       color:white; 
     }
     body {
-  background-image: url('https://wallpaperaccess.com/full/874056.jpg');
+     
+  background-image: url('https://wallpaperaccess.com/full/21199.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
 }
 </style>
 </head>
@@ -107,8 +108,8 @@ td,th,h2{
 <br><br><br>
   <div class="container">
 <div class="row">
-<div class="s1">
-<center><h2>BOOK DETAILS</h2></center><BR></BR>
+<div class="s1"><br>
+<center><h2>BOOK DETAILS</h2></center><BR>
 <div class="col col-8 col-sm-8 col-md-8 col-lg-8">
 <center>
 <table style="width:860px;" class="table ">

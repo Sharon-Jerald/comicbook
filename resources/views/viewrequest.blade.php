@@ -123,21 +123,28 @@ body {
 	display: inline-block;
 	margin: 100px auto;
 }
+th,td{
+  color:black;
+}
 .s1{
         position: absolute;
         top:320px;
-        left: 65%;
+        left: 25%;
         transform: translate(-50%,-50%);
         width: 940px;
         height: 540px;
        border-radius:5px;
         box-sizing: border-box;
-        background: rgba(0,0,0,0.8);
+        background: rgba(0,0,0,0.3);
        color:white; 
+    }
+    .table{
+      position: absolute;
+      left:-8%;
     }
     body {
      
-  background-image: url('https://images.unsplash.com/photo-1544716278-e513176f20b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80');
+  background-image: url('https://mocah.org/uploads/posts/1084051-illustration-Batman-cartoon-Grant-Morrison-Batman-and-Robin-Damian-Wayne-Dick-Grayson-Frank-Quitely-font.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -161,20 +168,36 @@ body {
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="/custhome">Home</a></li>
-         
+          <li><a class="nav-link scrollto" href="/custhome">Home</a></li>
+       
           <li class="dropdown active"><a href="#"><span>Book</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-            <li><a href="/customerbook">Book</a></li>
-            <li class="dropdown"><a href="#"><span>Request a book</span> <i class="bi bi-chevron-right"></i></a>
+              <li><a href="/customerbook">Book</a></li>
+             
+              <li class="dropdown"><a href="#"><span>Request a book</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="/rqstbook">Add Request</a></li>
                   <li><a href="/viewrequest">View Request</a></li>
                   </ul>
               </li> 
 
-             <li class="dropdown"><a href="#"><span>Search</span> <i class="bi bi-chevron-right"></i></a>            
-              <ul>
+              <li class="dropdown"><a href="#"><span>Search</span> <i class="bi bi-chevron-right"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>By Author name</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                <form action="searchauthor" method="post">
+                {{csrf_field()}}
+                  <table class="table table borderless" style="width:300px;">
+                   <tr>
+                      <td><input type="text" class="form-control" placeholder="Enter author name" name="bauthor" required></td>       
+                     <td><button class="btn btn-dark">Search</button></td>
+                   </tr>
+                 </table>
+                </form>
+              </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>By Book name</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
                 <form action="search" method="post">
                 {{csrf_field()}}
                   <table class="table table borderless" style="width:300px;">
@@ -185,13 +208,11 @@ body {
                  </table>
                 </form>
               </ul>
-            </li>
-        
-                </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="/myorder">My orders</a></li>
+              </li>
+        </ul>
+         </ul>
           <li><a class="nav-link scrollto" href="/cartlist">Cart</a></li>
-          <li><a class="nav-link scrollto" href="#">Profile</a></li>
+          <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
           <li><a class="getstarted scrollto" href="/logout">Logout</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -204,10 +225,10 @@ body {
 <br><br><br>
   <div class="container">
 <div class="row">
-<div class="col col-2 col-sm-2 col-md-2 col-lg-2"></div>
+
 <div class="col col-8 col-sm-8 col-md-8 col-lg-8">
 <center>
-<table class="table " style="width:920px;">
+<table class="table " style="width:900px;">
 <tr>
 <th>CUSTOMER NAME</th>
     <th>NAME</th>

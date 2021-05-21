@@ -44,9 +44,9 @@
                         <label for="cardNumber">
                             CARD NUMBER</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
+                            <input type="text" pattern=".{16}" class="form-control" id="cardNumber" placeholder="Valid Card Number"
                                 required autofocus />
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            
                         </div>
                     </div>
                     <div class="row">
@@ -65,7 +65,7 @@
                             <div class="form-group">
                                 <label for="cvCode">
                                     CV CODE</label>
-                                <input type="password" class="form-control" id="cvCode" placeholder="CV" required />
+                                <input type="password" pattern=".{3}" class="form-control" id="cvCode" placeholder="CV" required />
                             </div>
                         </div>
                     </div>

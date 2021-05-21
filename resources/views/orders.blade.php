@@ -81,40 +81,24 @@ body {
 
       <h1 class="logo"><a href="/">Comic Book</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <!-- <a href="index.html" class="logo"><img src="../assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="/custhome">Home</a></li>
+          <li><a class="nav-link scrollto " href="/">Home</a></li>
           
-          <li class="dropdown "><a href="#"><span>Book</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown active"><a href="#"><span>Book</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/customerbook">Book</a></li>
-             
-              <li class="dropdown"><a href="#"><span>Request a book</span> <i class="bi bi-chevron-right"></i></a>
+            <li><a href="/customerbook">Book</a></li>
+            <li class="dropdown"><a href="#"><span>Request a book</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="/rqstbook">Add Request</a></li>
                   <li><a href="/viewrequest">View Request</a></li>
                   </ul>
               </li> 
 
-              <li class="dropdown"><a href="#"><span>Search</span> <i class="bi bi-chevron-right"></i></a>
-            <ul>
-              <li class="dropdown"><a href="#"><span>By Author name</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                <form action="searchauthor" method="post">
-                {{csrf_field()}}
-                  <table class="table table borderless" style="width:300px;">
-                   <tr>
-                      <td><input type="text" class="form-control" placeholder="Enter author name" name="bauthor" required></td>       
-                     <td><button class="btn btn-dark">Search</button></td>
-                   </tr>
-                 </table>
-                </form>
-              </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>By Book name</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
+             <li class="dropdown"><a href="#"><span>Search</span> <i class="bi bi-chevron-right"></i></a>            
+              <ul>
                 <form action="search" method="post">
                 {{csrf_field()}}
                   <table class="table table borderless" style="width:300px;">
@@ -125,11 +109,13 @@ body {
                  </table>
                 </form>
               </ul>
-              </li>
-        </ul>
-         </ul>
-          <li><a class="nav-link scrollto active" href="/cartlist">Cart</a></li>
-          <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
+            </li>
+        
+                </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="/myorder">My orders</a></li>
+          <li><a class="nav-link scrollto" href="/cartlist">Cart</a></li>
+          <li><a class="nav-link scrollto" href="#">Profile</a></li>
           <li><a class="getstarted scrollto" href="/logout">Logout</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -145,13 +131,13 @@ body {
         
 
         <div class="row">
-        @foreach($customer as $customer)
-            <div class="col-md-3">
+      
+            <div class="col-lg-3">
                 <!-- Tabs nav -->
                 <div class="nav flex-column nav-pills nav-pills-custom"  role="tablist" aria-orientation="vertical">
                     <a class="nav-link mb-3 p-3 shadow active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
                         <i class="fa fa-user-circle-o mr-2"></i>
-                        <span class="font-weight-bold small text-uppercase">Change Password</span></a>
+                        <span class="font-weight-bold small text-uppercase">My Orders</span></a>
 
                     <a class="nav-link mb-3 p-3 shadow"  data-toggle="pill" href="/profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
                         <i class="fa fa-calendar-minus-o mr-2"></i>
@@ -161,35 +147,45 @@ body {
             </div>
 
 
-            <div class="col-md-9">
+            <div class="col-lg-9">
                 <!-- Tabs content -->
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                  
-                        <h4 class="font-italic mb-4"> </h4>
-                        <form action="/change" method="post" >
-       
-       {{ csrf_field() }}
-      
-               <table class="table table-borderless">
-    <tr>
-        <td>Old Password:</td>
-        <td><input type="text"  name="oldpass" class="form-control"></td>
-    </tr>
-    <tr>
-        <td>New Password:</td>
-        <td><input type="text"  name="newpass" class="form-control"></td>
-    </tr>
-    <tr>
-        <td>Confirm Password:</td>
-        <td><input type="text"  name="cnewpass" class="form-control"></td>
-    </tr>
-    <tr>
-        <td><button class="btn btn-success">RESET</button></td>
-        <td><button class="btn btn-success">CANCEL</button></td>
-    </tr>
-    </table>
-    </form>
+                    <center><h2>MY ORDERS</h2></center>
+            <table style="width:780px;" class="table ">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th >Price</th>
+                        <th>Total</th>
+                        <th>Date </th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach($orders as $t)
+                    <tr>
+                        <td class="col-sm-8 col-md-6">
+                        <div class="media">
+                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{ URL ::asset('assets/book_img/'.$t->book->bimage) }}" style="width: 72px; height: 72px;"> </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">{{ $t->book->bname }}</h4>
+                                <span> by  {{ $t->book->bauthor }}</span>
+                               
+                            </div>
+                        </div></td>
+                        <td >
+                        <h5>{{ $t->oqty }}</h5>
+                        </td>
+                        <td ><strong>Rs. {{ $t->book->bprice }}</strong></td>
+                        <td ><strong>Rs. {{ $t->ototal }}</strong></td>
+                        <td><strong> {{ $t->odate }}</strong></td>
+                    </tr>
+                    @endforeach
+                   
+                </tbody>
+            </table>
+           
             </div>
                     
                 </div>

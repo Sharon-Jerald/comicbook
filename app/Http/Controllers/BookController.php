@@ -176,7 +176,17 @@ class BookController extends Controller
           
     }
 
-    
+    public function searchauthor(Request $request)
+    {
+        
+        $getBname=request('bauthor');
+   
+        $books=BookModel::query()
+        ->where('bauthor', 'LIKE' , "%{$getBname}%")
+        ->get();
+        return view('customerbook',compact('books'));
+          
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -236,10 +246,16 @@ class BookController extends Controller
 
     public function deleteview($id)
     {
+        
+          
+            
+        try{
         $data=BookModel::find($id);
         $data->delete();
         return redirect('/viewbook');
-
+             } catch (\Illuminate\Database\QueryException $e) {
+        echo "<script>alert('Cannot delete or update a parent row: a foreign key constraint fails');window.location='/adminhome';</script>"; 
+    }
     }
 
     public function removecart($id)
@@ -283,11 +299,16 @@ class BookController extends Controller
 
            $cart->qtyprice=$price;
 
-
-          
-           $cart->save();
-           return redirect('/customerbook');
-       }
+           $stock=BookModel::where ('id','=',$cart->book_id)->first();
+       
+              if($stock->bstock==0){
+                 return view('error');
+               }
+            else{
+               $cart->save();
+               return redirect('/customerbook');
+           }
+        }
        else{
         return redirect('/login');
        }
@@ -356,6 +377,8 @@ public function order(Request $request)
                 $order->oprice=$product->bprice;
                 $order->ototal=($cart->qty)*($product->bprice);
                 $order->odate=$cdate;
+                
+               
                 $order->save(); 
                 
                 DB::table('book_models')
@@ -376,7 +399,7 @@ public function order(Request $request)
         }
         
         $orders=OrderModel::where('cid','=',$data->id)-> with('customer','book')->get();
-        return view('/myorder',compact('orders'));
+        return view('/orders',compact('orders'));
     }
 
 

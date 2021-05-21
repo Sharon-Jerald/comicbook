@@ -40,10 +40,10 @@ td,h3,h6,h2{
 }
 .s1{
         position: absolute;
-        top:360px;
+        top:350px;
         left: 25%;
         transform: translate(-50%,-50%);
-        width: 600px;
+        width: 450px;
         height: 500px;
        border-radius:5px;
         box-sizing: border-box;
@@ -51,7 +51,7 @@ td,h3,h6,h2{
        color:burlywood; 
     }
     body {
-  background-image: url('https://wallpaperaccess.com/full/1203451.jpg');
+  background-image: url('https://wallpapercave.com/wp/wp1816224.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -101,46 +101,46 @@ td,h3,h6,h2{
 
         {{ csrf_field() }}
 
-        <table class="table table-borderless" style="width:570px;">
+        <table class="table table-borderless" style="width:440px;">
         
         <tr>
-            <td>Name:</td>
-            <td><input name="name" type="text" class="form-control"></td>
+            
+            <td><input name="name" placeholder="Name" type="text" class="form-control"></td>
            
         </tr>
         <tr>
-            <td>Address:</td>
-            <td><input name="address" type="text" class="form-control"></td>
+            
+            <td><input name="address" placeholder="Address" type="text" class="form-control"></td>
            
         </tr>
         <tr>
-            <td>City:</td>
-            <td><input name="city" type="text" class="form-control"></td>
+          
+            <td><input name="city" placeholder="City" type="text" class="form-control"></td>
             
         </tr>
         <tr>
-            <td>District:</td>
-            <td><input name="district" type="text" class="form-control"></td>
+          
+            <td><input name="district" placeholder="District" type="text" class="form-control"></td>
             
         </tr>
         <tr>
-            <td>Phone No.:</td>
-            <td><input name="phone" type="number" pattern=".{10}" class="form-control"></td>
+           
+            <td><input name="phone" placeholder="Phone No" type="number" pattern=".{10}" class="form-control"></td>
            
         </tr>
         <tr>
-            <td>Mail id:</td>
-            <td><input name="cmail" type="text" class="form-control"></td>
+           
+            <td><input name="cmail" placeholder="Email Id" type="text" class="form-control"></td>
           
         </tr>
         <tr>
-            <td>Password:</td>
-            <td><input name="password" type="password" class="form-control"></td>
+            
+            <td><input name="password" placeholder="Password" type="password" class="form-control"></td>
            
         </tr>
         <tr>
-            <td>Confirm Password:</td>
-            <td><input name="confirmpassword" type="password" class="form-control"></td>
+           
+            <td><input name="confirmpassword" placeholder="Confirm Password" type="password" class="form-control"></td>
            
         </tr>
         <tr>
@@ -148,8 +148,8 @@ td,h3,h6,h2{
             <td></td>
         </tr>
         <tr>
-            <td><button class="btn btn-success">REGISTER</button></td>
-            <td><center><a class="btn btn-success"  href="/">CANCEL</a></center></td>
+            <td><button style="width:200px;" class="btn btn-success">REGISTER</button>
+            <a class="btn btn-success" style="width:200px;"  href="/">CANCEL</a></td>
         </tr>
         </table>
         </form>

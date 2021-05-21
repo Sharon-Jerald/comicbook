@@ -1,32 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-  <title>Booksmith</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.nav-pills-custom .nav-link {
+    color: #000000;
+    background: #fff;
+    position: relative;
+}
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+.nav-pills-custom .nav-link.active {
+    color: #050505;
+    background: #050505;
+}
+
+
+/* Add indicator arrow for the active tab */
+@media (min-width: 992px) {
+    .nav-pills-custom .nav-link::before {
+        content: '';
+        display: block;
+        border-top: 8px solid transparent;
+        border-left: 10px solid #fff;
+        border-bottom: 8px solid transparent;
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+}
+
+.nav-pills-custom .nav-link.active::before {
+    opacity: 1;
+}
+
+
+body {
+  
+    min-height: 100vh;
+    
+}
+</style>
+<!-- Favicons -->
+<link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Groovin - v4.1.0
@@ -34,33 +73,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-
-<style>
-td,h3,h6,h2{
-  color:white;
-}
-.s1{
-        position: absolute;
-        top:300px;
-        left: 35%;
-        transform: translate(-50%,-50%);
-        width: 600px;
-        height: 400px;
-       border-radius:5px;
-        box-sizing: border-box;
-        background: rgba(0,0,0,0.8);
-       color:burlywood; 
-    }
-    body {
-  background-image: url('https://wallpaperaccess.com/full/183215.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-</style>
 </head>
-
-<body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -72,8 +85,8 @@ td,h3,h6,h2{
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="/custhome">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto " href="/custhome">Home</a></li>
+          
           <li class="dropdown "><a href="#"><span>Book</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/customerbook">Book</a></li>
@@ -85,8 +98,23 @@ td,h3,h6,h2{
                   </ul>
               </li> 
 
-             <li class="dropdown"><a href="#"><span>Search</span> <i class="bi bi-chevron-right"></i></a>            
-              <ul>
+              <li class="dropdown"><a href="#"><span>Search</span> <i class="bi bi-chevron-right"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>By Author name</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                <form action="searchauthor" method="post">
+                {{csrf_field()}}
+                  <table class="table table borderless" style="width:300px;">
+                   <tr>
+                      <td><input type="text" class="form-control" placeholder="Enter author name" name="bauthor" required></td>       
+                     <td><button class="btn btn-dark">Search</button></td>
+                   </tr>
+                 </table>
+                </form>
+              </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>By Book name</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
                 <form action="search" method="post">
                 {{csrf_field()}}
                   <table class="table table borderless" style="width:300px;">
@@ -97,12 +125,10 @@ td,h3,h6,h2{
                  </table>
                 </form>
               </ul>
-            </li>
-        
-                </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="/myorder">My orders</a></li>
-          <li><a class="nav-link scrollto" href="/cartlist">Cart</a></li>
+              </li>
+        </ul>
+         </ul>
+          <li><a class="nav-link scrollto active" href="/cartlist">Cart</a></li>
           <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
           <li><a class="getstarted scrollto" href="/logout">Logout</a></li>
         </ul>
@@ -112,20 +138,45 @@ td,h3,h6,h2{
     </div>
   </header><!-- End Header -->
 
-    
-<br><br><br>
-<br><br>
-<div class="container">
-    <div class="row">
-        <div class="s1">
-        <br>
-            
-            <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+<body>
+  <br><br>
+<section class="py-5 header">
+    <div class="container py-4">
+        
+
+        <div class="row">
+        @foreach($customer as $customer)
+            <div class="col-md-3">
+                <!-- Tabs nav -->
+                <div class="nav flex-column nav-pills nav-pills-custom"  role="tablist" aria-orientation="vertical">
+                    <a class="nav-link mb-3 p-3 shadow active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                        <i class="fa fa-user-circle-o mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase">Personal information</span></a>
+
+                    <a class="nav-link mb-3 p-3 shadow"  data-toggle="pill" href="/orders" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                        <i class="fa fa-calendar-minus-o mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase">My Orders</span></a>
+
+                    <a class="nav-link mb-3 p-3 shadow" data-toggle="pill" href={{"/editprofile/".$customer->id}} role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                        <i class="fa fa-star mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase">Edit Profile</span></a>
+
+                    <a class="nav-link mb-3 p-3 shadow" data-toggle="pill" href={{"/changepwd/".$customer->id}} role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                        <i class="fa fa-check mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase">Change Password</span></a>
+                    </div>
             </div>
-             <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <table class="table table-borderless" style="width: 500px;">
-            @foreach($customer as $customer)
-              <center><h3> {{ $customer->cname }} </h3></center>
+
+
+            <div class="col-md-9">
+                <!-- Tabs content -->
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                  
+                        <h4 class="font-italic mb-4">{{ $customer->cname }} </h4>
+                        <table class="table" style="width: 550px;">
+            
+       
                 
             <tr>
                 <td>Mail</td>
@@ -149,11 +200,13 @@ td,h3,h6,h2{
             </tr>
             @endforeach
             </table>
-            
-          
-             </div>
+            </div>
+                    
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>  
+
 </body>
 </html>

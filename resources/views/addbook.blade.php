@@ -38,23 +38,27 @@
 <style>
 input[type=text],input[type=file],input[type=number]{
 background-color: #dee3e0;}
+.btn{
+  background-color: #e0a57e;
+  color: white;background: rgba(0,0,0,0.7);
+}
 td{
   color:white;
 }
 .s1{
         position: absolute;
         top:360px;
-        left: 65%;
+        left: 35%;
         transform: translate(-50%,-50%);
-        width: 600px;
+        width: 480px;
         height: 540px;
        border-radius:5px;
         box-sizing: border-box;
-        background: rgba(0,0,0,0.8);
-       color:burlywood; 
+        
+       color:white; 
     }
     body {
-  background-image: url('https://wallpapercave.com/wp/wp2305131.jpg');
+  background-image: url('https://cdn.statically.io/img/wallpapercart.com/wp-content/uploads/2019/05/Movie-Toy-Story-4-Woody-HD-Wallpaper-scaled.jpg?quality=100&f=auto');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -125,18 +129,18 @@ td{
        {{ csrf_field() }}
 
 <br>
-        <table style="width:550px" class="table table-borderless">
+        <table style="width:450px" class="table table-borderless">
         
           <tr>
-              <td>Name:</td>
-              <td><input name="bname" type="text" class="form-control"></td>
+              
+              <td><input name="bname" placeholder="Name" type="text" class="form-control"></td>
           </tr>
           <tr>
-              <td>Author:</td>
-              <td><input  name="bauthor" type="text" class="form-control"></td>
+              
+              <td><input  name="bauthor" placeholder="Author" type="text" class="form-control"></td>
           </tr>
           <tr>
-          <td>Genre:</td>
+         
          <td> <select name="bgenre" class="form-control" >
 
             @foreach($bgenre as $bgenre)
@@ -145,33 +149,32 @@ td{
 </select></td>
           </tr>
           <tr>
-              <td>Publisher:</td>
-              <td><input  name="bpublisher" type="text" class="form-control"></td>
+              <td><input  name="bpublisher" placeholder="Publisher" type="text" class="form-control"></td>
           </tr>
           <tr>
-              <td>Description:</td>
-              <td><input  name="bdescription" type="text" class="form-control"></td>
+              
+              <td><input  name="bdescription" placeholder="Description" type="text" class="form-control"></td>
           </tr>
 
           <tr>
-              <td>Image:</td>
+            
               <td><input  name="bimage" type="file" class="form-control"></td>
           </tr>
           <tr>
-              <td>Price:</td>
-              <td><input  name="bprice" type="number" class="form-control"></td>
+            
+              <td><input  name="bprice" placeholder="Price"  type="number" class="form-control"></td>
           </tr>
           <tr>
-              <td>Stock:</td>
-              <td><input  name="bstock" type="number" class="form-control"></td>
+              
+              <td><input  name="bstock" placeholder="Stock" type="number" class="form-control"></td>
           </tr>
           <tr>
               <td></td>
               <td></td>
           </tr>
           <tr>
-              <td><center><button class="btn btn-success">SUBMIT</button></center></td>
-              <td><center><a class="btn btn-success"  href="/adminhome">CANCEL</a></center></td>
+              <td><button style="width: 200px;" class="btn">SUBMIT</button>
+             <a class="btn" style="width: 200px;"   href="/adminhome">CANCEL</a></td>
           </tr>
           </table>
           </form>

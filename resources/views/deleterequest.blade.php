@@ -37,30 +37,38 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <h1 class="logo"><a href="/">Comic Book</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="../assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
+<nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="/">Home</a></li>
-         
+          <li><a class="nav-link scrollto" href="/custhome">Home</a></li>
+       
           <li class="dropdown active"><a href="#"><span>Book</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-            <li><a href="/customerbook">Book</a></li>
-            <li class="dropdown"><a href="#"><span>Request a book</span> <i class="bi bi-chevron-right"></i></a>
+              <li><a href="/customerbook">Book</a></li>
+             
+              <li class="dropdown"><a href="#"><span>Request a book</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="/rqstbook">Add Request</a></li>
                   <li><a href="/viewrequest">View Request</a></li>
                   </ul>
               </li> 
 
-             <li class="dropdown"><a href="#"><span>Search</span> <i class="bi bi-chevron-right"></i></a>            
-              <ul>
+              <li class="dropdown"><a href="#"><span>Search</span> <i class="bi bi-chevron-right"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>By Author name</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                <form action="searchauthor" method="post">
+                {{csrf_field()}}
+                  <table class="table table borderless" style="width:300px;">
+                   <tr>
+                      <td><input type="text" class="form-control" placeholder="Enter author name" name="bauthor" required></td>       
+                     <td><button class="btn btn-dark">Search</button></td>
+                   </tr>
+                 </table>
+                </form>
+              </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>By Book name</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
                 <form action="search" method="post">
                 {{csrf_field()}}
                   <table class="table table borderless" style="width:300px;">
@@ -71,13 +79,11 @@
                  </table>
                 </form>
               </ul>
-            </li>
-        
-                </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="/myorder">My orders</a></li>
-          <li><a class="nav-link scrollto" href="#">Cart</a></li>
-          <li><a class="nav-link scrollto" href="#">Profile</a></li>
+              </li>
+        </ul>
+         </ul>
+          <li><a class="nav-link scrollto" href="/cartlist">Cart</a></li>
+          <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
           <li><a class="getstarted scrollto" href="/logout">Logout</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

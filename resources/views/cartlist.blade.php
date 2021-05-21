@@ -13,11 +13,11 @@
 
 .s1{
         position: absolute;
-        top:270px;
-        left: 50%;
+        top:330px;
+        left: 36%;
         transform: translate(-50%,-50%);
         width: 940px;
-        height: 520px;
+        height: 620px;
        border-radius:5px;
         box-sizing: border-box;
         background: rgba(0,0,0,0.8);
@@ -25,8 +25,8 @@
     }
     body {
      
-  background-image: url('https://wallpapercave.com/wp/wp8111263.jpg');
-  background-repeat: no-repeat;
+   background-image: url('https://mocah.org/uploads/posts/1084051-illustration-Batman-cartoon-Grant-Morrison-Batman-and-Robin-Damian-Wayne-Dick-Grayson-Frank-Quitely-font.jpg');
+   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }

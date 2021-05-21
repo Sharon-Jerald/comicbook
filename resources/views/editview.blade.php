@@ -55,7 +55,7 @@
           <li class="dropdown "><a href="#"><span>Add</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/genre">Add Genre</a></li>
-              <li><a href="/addbook">Add Books</a></li>            
+              <li><a href="/addgenre">Add Books</a></li>            
             </ul>
           </li>
           <li class="dropdown  active"><a href="#"><span>View</span> <i class="bi bi-chevron-down"></i></a>

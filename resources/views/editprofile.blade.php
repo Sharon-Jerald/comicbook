@@ -74,6 +74,8 @@ body {
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<body>
+
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -83,10 +85,10 @@ body {
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-      <nav id="navbar" class="navbar">
+<nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="/custhome">Home</a></li>
-          
+          <li><a class="nav-link scrollto" href="/custhome">Home</a></li>
+     
           <li class="dropdown "><a href="#"><span>Book</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/customerbook">Book</a></li>
@@ -128,8 +130,8 @@ body {
               </li>
         </ul>
          </ul>
-          <li><a class="nav-link scrollto active" href="/cartlist">Cart</a></li>
-          <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
+          <li><a class="nav-link scrollto" href="/cartlist">Cart</a></li>
+          <li><a class="nav-link scrollto active" href="/profile">Profile</a></li>
           <li><a class="getstarted scrollto" href="/logout">Logout</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -138,25 +140,30 @@ body {
     </div>
   </header><!-- End Header -->
 
-<body>
   <br><br>
 <section class="py-5 header">
     <div class="container py-4">
         
 
         <div class="row">
-        @foreach($customer as $customer)
             <div class="col-md-3">
                 <!-- Tabs nav -->
                 <div class="nav flex-column nav-pills nav-pills-custom"  role="tablist" aria-orientation="vertical">
                     <a class="nav-link mb-3 p-3 shadow active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
                         <i class="fa fa-user-circle-o mr-2"></i>
-                        <span class="font-weight-bold small text-uppercase">Change Password</span></a>
+                        <span class="font-weight-bold small text-uppercase">Edit Profile</span></a>
 
                     <a class="nav-link mb-3 p-3 shadow"  data-toggle="pill" href="/profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
                         <i class="fa fa-calendar-minus-o mr-2"></i>
                         <span class="font-weight-bold small text-uppercase">Profile</span></a>
 
+                    <a class="nav-link mb-3 p-3 shadow" data-toggle="pill" href="/orders" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                        <i class="fa fa-star mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase">My Orders</span></a>
+
+                    <a class="nav-link mb-3 p-3 shadow" data-toggle="pill" href="/changepwd" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                        <i class="fa fa-check mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase">Change Password</span></a>
                     </div>
             </div>
 
@@ -165,34 +172,54 @@ body {
                 <!-- Tabs content -->
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                  
-                        <h4 class="font-italic mb-4"> </h4>
-                        <form action="/change" method="post" >
-       
-       {{ csrf_field() }}
-      
-               <table class="table table-borderless">
-    <tr>
-        <td>Old Password:</td>
-        <td><input type="text"  name="oldpass" class="form-control"></td>
-    </tr>
-    <tr>
-        <td>New Password:</td>
-        <td><input type="text"  name="newpass" class="form-control"></td>
-    </tr>
-    <tr>
-        <td>Confirm Password:</td>
-        <td><input type="text"  name="cnewpass" class="form-control"></td>
-    </tr>
-    <tr>
-        <td><button class="btn btn-success">RESET</button></td>
-        <td><button class="btn btn-success">CANCEL</button></td>
-    </tr>
-    </table>
-    </form>
-            </div>
-                    
-                </div>
+                   
+<form action="/customereditprocess/{{ $customer->id }}" method="post" enctype="multipart/form-data">
+
+{{ csrf_field() }}
+
+<table class="table table-borderless">
+
+ <tr>
+     <td> Name </td>
+     <td>
+      <input value="{{   $customer->cname }}" name="cname" type="text" class="form-control">
+     </td>
+ </tr>
+ <tr>
+     <td>Address</td>
+     <td>       <input value="{{   $customer->caddress}}" name="caddress" type="text" class="form-control">
+</td>
+ </tr>
+ <tr>
+     <td>City</td>
+     <td>      <input value="{{   $customer->ccity}}" name="ccity" type="text" class="form-control">
+</td>
+ </tr>
+ <tr>
+     <td>District </td>
+     <td>      <input value="{{   $customer->cstate}}" name="cstate" type="text" class="form-control">
+</td>
+ </tr>
+ <tr>
+     <td>Mail </td>
+     <td>      <input value="{{   $customer->cmail}}" name="cmail" type="text" class="form-control">
+</td>
+ </tr>
+ <tr>
+     <td>Phone</td>
+     <td>       <input value="{{   $customer->cphone}}" name="cphone" type="number" class="form-control">
+</td>
+ </tr>
+
+
+ <tr>
+     <td></td>
+     <td> <button class="btn btn-success"> SUBMIT </button></td>
+ </tr>
+</table>
+
+
+</form>
             </div>
         </div>
     </div>

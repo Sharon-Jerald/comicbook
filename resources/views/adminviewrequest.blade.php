@@ -35,26 +35,28 @@
   ======================================================== -->
 
   <style>
-td,th,h2,h3{
+td,th,h2{
   color:white;
 }
 .s1{
         position: absolute;
-        top:330px;
-        left: 33%;
+        top:345px;
+        left: 65%;
         transform: translate(-50%,-50%);
         width: 850px;
-        height: 420px;
+        height: 500px;
        border-radius:5px;
         box-sizing: border-box;
-        background: rgba(0,0,0,0.9);
-       color:burlywood; 
+        background: rgba(0,0,0,0.8);
+       color:white; 
     }
     body {
-  background-image: url('https://wallpapercave.com/wp/wp3281403.jpg');
+     
+  background-image: url('https://wallpaperaccess.com/full/21199.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
 }
 </style>
 </head>

@@ -62,8 +62,23 @@
                   </ul>
               </li> 
 
-             <li class="dropdown"><a href="#"><span>Search</span> <i class="bi bi-chevron-right"></i></a>            
-              <ul>
+              <li class="dropdown"><a href="#"><span>Search</span> <i class="bi bi-chevron-right"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>By Author name</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                <form action="searchauthor" method="post">
+                {{csrf_field()}}
+                  <table class="table table borderless" style="width:300px;">
+                   <tr>
+                      <td><input type="text" class="form-control" placeholder="Enter author name" name="bauthor" required></td>       
+                     <td><button class="btn btn-dark">Search</button></td>
+                   </tr>
+                 </table>
+                </form>
+              </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>By Book name</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
                 <form action="search" method="post">
                 {{csrf_field()}}
                   <table class="table table borderless" style="width:300px;">
@@ -74,11 +89,9 @@
                  </table>
                 </form>
               </ul>
-            </li>
-        
-                </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="/myorder">My orders</a></li>
+              </li>
+        </ul>
+         </ul>
           <li><a class="nav-link scrollto" href="/cartlist">Cart</a></li>
           <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
           <li><a class="getstarted scrollto" href="/logout">Logout</a></li>

@@ -22,6 +22,9 @@ use App\Http\Controllers\RequestController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/test', function () {
+    return view('test');
+});
 
 
 
@@ -50,7 +53,17 @@ route::get('/rqstbook',[CustomerController::class,'custid']);
 
 Route::get('/home',[CustomerController::class,'dashboard']);
 
+Route::get('/changepwd', function () {
+    return view('pwd');
+});
+
+Route::post('/change',[CustomerController::class,'custchangepassword']);
+
 Route::get('/profile',[CustomerController::class,'profile']);
+
+route::get('/editprofile/{id}', [CustomerController::class,'edit']);
+
+route::post('/customereditprocess/{id}', [CustomerController::class,'update']);
 
 
 route::get('/success',[BookController::class,'success']);
@@ -58,6 +71,8 @@ route::get('/success',[BookController::class,'success']);
 route::get('/addbook',[BookController::class,'create']);
 
 route::post('/search',[BookController::class,'search']);
+
+route::post('/searchauthor',[BookController::class,'searchauthor']);
 
 route::post('/bookadd', [BookController::class,'store']);
 
@@ -86,6 +101,8 @@ route::post('/add_to_cart', [BookController::class,'addtocart']);
 route::get('/cartlist',[BookController::class,'cartlist']);
 
 route::get('/myorder',[BookController::class,'myorder']);
+
+route::get('/orders',[BookController::class,'myorder']);
 
 route::get('/total',[BookController::class,'total']);
 

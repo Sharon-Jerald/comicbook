@@ -40,56 +40,64 @@
 <!------ Include the above in your HEAD tag ---------->
 <style>
 td,th,h2{
-  color:white;
+  color:black;
 }
-.s1{
+{
         position: absolute;
-        top:355px;
-        left: 50%;
+        top:360px;
+        left: 37%;
         transform: translate(-50%,-50%);
-        width: 940px;
+        width: 830px;
         height: 550px;
        border-radius:5px;
         box-sizing: border-box;
-        background: rgba(0,0,0,0.8);
+        background: rgba(0,0,0,0.7);
        color:white; 
     }
     body {
      
-  background-image: url('https://wallpapercave.com/wp/wp8111263.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
+     background-image: url('https://mocah.org/uploads/posts/1084051-illustration-Batman-cartoon-Grant-Morrison-Batman-and-Robin-Damian-Wayne-Dick-Grayson-Frank-Quitely-font.jpg');
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+   }
 }
 </style>
 
 </head>
 
-<!-- ======= Header ======= -->
-<header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <h1 class="logo"><a href="/">Comic Book</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
+<nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="/custhome">Home</a></li>
-         
-          <li class="dropdown active"><a href="#"><span>Book</span> <i class="bi bi-chevron-down"></i></a>
+       
+          <li class="dropdown "><a href="#"><span>Book</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-            <li><a href="/customerbook">Book</a></li>
-            <li class="dropdown"><a href="#"><span>Request a book</span> <i class="bi bi-chevron-right"></i></a>
+              <li><a href="/customerbook">Book</a></li>
+             
+              <li class="dropdown"><a href="#"><span>Request a book</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="/rqstbook">Add Request</a></li>
                   <li><a href="/viewrequest">View Request</a></li>
                   </ul>
               </li> 
 
-             <li class="dropdown"><a href="#"><span>Search</span> <i class="bi bi-chevron-right"></i></a>            
-              <ul>
+              <li class="dropdown"><a href="#"><span>Search</span> <i class="bi bi-chevron-right"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>By Author name</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                <form action="searchauthor" method="post">
+                {{csrf_field()}}
+                  <table class="table table borderless" style="width:300px;">
+                   <tr>
+                      <td><input type="text" class="form-control" placeholder="Enter author name" name="bauthor" required></td>       
+                     <td><button class="btn btn-dark">Search</button></td>
+                   </tr>
+                 </table>
+                </form>
+              </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>By Book name</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
                 <form action="search" method="post">
                 {{csrf_field()}}
                   <table class="table table borderless" style="width:300px;">
@@ -100,13 +108,11 @@ td,th,h2{
                  </table>
                 </form>
               </ul>
-            </li>
-        
-                </ul>
-          </li>
-          <li><a class="nav-link scrollto active" href="/myorder">My orders</a></li>
+              </li>
+        </ul>
+         </ul>
           <li><a class="nav-link scrollto" href="/cartlist">Cart</a></li>
-          <li><a class="nav-link scrollto" href="#">Profile</a></li>
+          <li><a class="nav-link scrollto active" href="/profile">Profile</a></li>
           <li><a class="getstarted scrollto" href="/logout">Logout</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -123,7 +129,7 @@ td,th,h2{
     <div class="s1">
         <div class="col-sm-12 col-md-10 col-md-offset-1">
         <center><h2>MY ORDERS</h2></center>
-            <table style="width:820px;" class="table ">
+            <table style="width:750px;" class="table ">
                 <thead>
                     <tr>
                         <th>Product</th>
@@ -142,7 +148,7 @@ td,th,h2{
                             <div class="media-body">
                                 <h4 class="media-heading">{{ $t->book->bname }}</h4>
                                 <h5 class="media-heading"> by  {{ $t->book->bauthor }}</h5>
-                                <span>Publisher: </span><span class="text-success"><strong>{{ $t->book->bpublisher }}</strong></span>
+                               <span class="text">{{ $t->book->bpublisher }}</span>
                             </div>
                         </div></td>
                         <td >
