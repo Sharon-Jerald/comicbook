@@ -26,20 +26,31 @@ Route::get('/test', function () {
     return view('test');
 });
 
+Route::get('/login',[CustomerController::class, 'login']);
 
-
+Route::get('/home',[CustomerController::class,'dashboard']);
 
 route::post('/customerread', [CustomerController::class,'store']);
+
+route::post('/adminread', [CustomerController::class,'adminstore']);
 
 Route::get('/logout',[CustomerController::class, 'logout']);
 
 Route::post('/userlogin',[CustomerController::class,'check']);
 
+route::get('/register',[CustomerController::class,'create']);
+
+route::get('/adminregister',[CustomerController::class,'admin']);
+
+route::get('/sms',[CustomerController::class,'sms']);
+
+
+
 
 
 Route::group(['middleware'=>['LoginCheck']], function(){
 
-Route::get('/login',[CustomerController::class, 'login']);
+
 
 Route::get('/adminhome',[CustomerController::class, 'adminhome']);
 
@@ -47,14 +58,14 @@ Route::get('/custhome',[CustomerController::class, 'custhome']);
 
 route::get('/viewcustomer',[CustomerController::class,'index']);
 
-route::get('/register',[CustomerController::class,'create']);
+
 
 route::get('/rqstbook',[CustomerController::class,'custid']);
 
-Route::get('/home',[CustomerController::class,'dashboard']);
+
 
 Route::get('/changepwd', function () {
-    return view('pwd');
+    return view('changepwd');
 });
 
 Route::post('/change',[CustomerController::class,'custchangepassword']);

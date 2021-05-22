@@ -145,7 +145,7 @@ body {
         
 
         <div class="row">
-        @foreach($customer as $customer)
+       
             <div class="col-md-3">
                 <!-- Tabs nav -->
                 <div class="nav flex-column nav-pills nav-pills-custom"  role="tablist" aria-orientation="vertical">

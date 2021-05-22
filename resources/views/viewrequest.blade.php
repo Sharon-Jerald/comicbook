@@ -246,9 +246,26 @@ th,td{
     <td>{{ $rbook->rbpublisher }}</td>
     <td>{{ $rbook->rbqty }}</td>
     <td><a class="btn btn-warning" href={{"/editrequest/".$rbook->id}}>EDIT</a></td>
-    <td><a class="btn btn-danger" data-toggle="modal"  href="#myModal">DELETE</a></td>
+    <td><a class="btn btn-danger" href={{"/deleterequest/". $rbook->id}}>DELETE</a></td>
 
 </tr>
+<div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header justify-content-center">
+				<div class="icon-box">
+					<i class="material-icons">&#xE5CD;</i>
+				</div>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body text-center">
+				<h4>Delete Request!!</h4>	
+				<p>Are you sure want to delete ????</p>
+			<span>	<a href={{"/deleterequest/". $rbook->id}}>Confirm</a></span>
+			</div>
+		</div>
+	</div>
+</div>  
 
 @endforeach
 

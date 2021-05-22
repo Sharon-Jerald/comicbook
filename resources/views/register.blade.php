@@ -40,11 +40,11 @@ td,h3,h6,h2{
 }
 .s1{
         position: absolute;
-        top:350px;
+        top:360px;
         left: 25%;
         transform: translate(-50%,-50%);
         width: 450px;
-        height: 500px;
+        height: 550px;
        border-radius:5px;
         box-sizing: border-box;
         background: rgba(0,0,0,0.5);
@@ -76,6 +76,8 @@ td,h3,h6,h2{
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="/login">Login</a></li>
           <li><a class="nav-link scrollto active" href="/register">Register</a></li>
+          
+
           
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -125,7 +127,7 @@ td,h3,h6,h2{
         </tr>
         <tr>
            
-            <td><input name="phone" placeholder="Phone No" type="number" pattern=".{10}" class="form-control"></td>
+            <td><input name="phone" placeholder="Phone No" type="number" pattern=".{12}" class="form-control"></td>
            
         </tr>
         <tr>

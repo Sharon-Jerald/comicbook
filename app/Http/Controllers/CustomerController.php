@@ -8,6 +8,10 @@ use App\Models\CustomerModel;
 
 use App\Models\LoginModel;
 
+use Illuminate\Support\Facades\Session;
+
+use Nexmo\Laravel\Facade\Nexmo;
+
 class CustomerController extends Controller
 {
     /**
@@ -44,9 +48,27 @@ class CustomerController extends Controller
         return view('custhome',$data);
     }
 
+    public function sms()
+    {
+        
+        Nexmo::message()->send([
+            'to' => '916238285860',
+            'from' => '16105552344',
+            'text' => 'Using the facade to send a message.'
+        ]);
+
+        Session::flash('success', 'Message sent');
+        return redirect('/orders');
+    }
+
     public function create()
     {
         return view('register');
+    }
+
+    public function admin()
+    {
+        return view('adminregister');
     }
 
     public function custid()
@@ -74,6 +96,31 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function adminstore(Request $request)
+    {
+       
+
+        $getemail=request("email");
+        $getpass=request("password");
+
+       
+        $login=new LoginModel();
+
+        $login->username=$getemail;
+        $login->password=$getpass;
+        $login->usertype="Admin";
+        $save= $login->save();
+        
+        if($save){
+            return redirect("/login")->with('success','New User has been successfully registered');
+         }else{
+             return redirect("/adminregister")->with('fail','Something went wrong, try again later');
+         }
+
+        return redirect('/#about');
+
+    }
+
     public function store(Request $request)
     {
         $customMessages = [
@@ -128,8 +175,7 @@ class CustomerController extends Controller
 
         $save=$user->save();
         if($save){
-            return back()->with('success','You have successfully registered!!!!');
-            return view('login');
+            echo "<script>alert('Successfully Registered');window.location='/login';</script>";
         }else{
             return back()->with('fail','Something went wrong,try again!!!');
         }
@@ -211,7 +257,7 @@ class CustomerController extends Controller
             if($getnewpass==$confirmpass)
             {
                 $change=LoginModel::where('Username','=',$getemail)->update(['Password'=>$getnewpass]); 
-                return redirect('/');
+                return redirect('/login');
       
             }
             else{

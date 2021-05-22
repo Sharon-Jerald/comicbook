@@ -72,10 +72,12 @@
                     </form>
                 </div>
             </div>
+            
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon"></span>Rs. {{$total}}</span> Final Payment</a>
+                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon"></span>Rs. {{ $total }}</span> Final Payment</a>
                 </li>
             </ul>
+   
             <br/>
             <form action="/order" method="POST">
                         {{ csrf_field() }}

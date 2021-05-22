@@ -12,13 +12,16 @@ use App\Models\RequestbookModel;
 
 use App\Models\CustomerModel;
 
+use Illuminate\Support\Facades\Session;
+
+use Nexmo\Laravel\Facade\Nexmo;
+
 use App\Models\LoginModel;
 
 use App\Models\OrderModel;
 
 use App\Models\GenreModel;
 
-use Session;
 
 use Carbon\Carbon;
 
@@ -144,8 +147,7 @@ class BookController extends Controller
 
         $save=$book->save();
         if($save){
-            return back()->with('success','You have successfully added!!!!');
-            return view('adminhome');
+            echo "<script>alert('Successfully Registered');window.location='/viewbook';</script>";
         }else{
             return back()->with('fail','Something went wrong,try again!!!');
         }
@@ -302,7 +304,7 @@ class BookController extends Controller
            $stock=BookModel::where ('id','=',$cart->book_id)->first();
        
               if($stock->bstock==0){
-                 return view('error');
+                echo "<script>alert('Product is out of stock!!!');window.location='/customerbook';</script>";
                }
             else{
                $cart->save();
@@ -347,12 +349,15 @@ class BookController extends Controller
 
 function payment()
 {
-    $customerId=Session::get('LoggedUser');
+    $custid= CustomerModel::where('cmail','=', session('LoggedUser'))->first();
+    $customerId=$custid->id;
+    
     $total=$products=DB::table('cart_models')
     ->join('book_models','cart_models.book_id','=','book_models.id') 
     ->where('cart_models.customer_id',$customerId)
     ->sum('cart_models.qtyprice');
-    
+
+   
     return view('payment',['total'=>$total]);
     
 }
@@ -380,7 +385,13 @@ public function order(Request $request)
                 
                
                 $order->save(); 
-                
+
+                Nexmo::message()->send([
+                    'to' => $userId->cphone,
+                    'from' => '16105552344',
+                    'text' => 'Thank You!Your order has been placed.'
+                ]);
+        
                 DB::table('book_models')
                 ->where('id', $cart->book_id)
                 ->update(['bstock' => ($product->bstock-$cart->qty)]);

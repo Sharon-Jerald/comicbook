@@ -161,7 +161,7 @@ body {
                         <i class="fa fa-star mr-2"></i>
                         <span class="font-weight-bold small text-uppercase">Edit Profile</span></a>
 
-                    <a class="nav-link mb-3 p-3 shadow" data-toggle="pill" href={{"/changepwd/".$customer->id}} role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                    <a class="nav-link mb-3 p-3 shadow" data-toggle="pill" href="/changepwd"  role="tab" aria-controls="v-pills-settings" aria-selected="false">
                         <i class="fa fa-check mr-2"></i>
                         <span class="font-weight-bold small text-uppercase">Change Password</span></a>
                     </div>
