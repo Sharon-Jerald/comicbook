@@ -352,16 +352,13 @@ class BookController extends Controller
        }
        
        $customerId=$custid->id;
-       $data=DB::table('cart_models')
-       ->join('book_models','cart_models.book_id','=','book_models.id') 
-       ->where('cart_models.customer_id',$customerId)
-       ->select('cart_models.*')
-       ->get();
+       
 
        $total=$products=DB::table('cart_models')
         ->join('book_models','cart_models.book_id','=','book_models.id') 
         ->where('cart_models.customer_id',$customerId)
-        ->sum('cart_models.qtyprice');
+        ->sum('(cast(cart_models.qtyprice as double precision))');
+        // ->sum('cart_models.qtyprice');
 
       $test = CartModel::with('book')
       ->join('book_models','cart_models.book_id','=','book_models.id') 
