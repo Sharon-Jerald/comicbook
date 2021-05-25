@@ -107,42 +107,42 @@ td,h3,h6,h2{
         
         <tr>
             
-            <td><input name="name" placeholder="Name" type="text" class="form-control"></td>
+            <td><input name="name" placeholder="Name" type="text" class="form-control" required></td>
            
         </tr>
         <tr>
             
-            <td><input name="address" placeholder="Address" type="text" class="form-control"></td>
+            <td><input name="address" placeholder="Address" type="text" class="form-control" required></td>
            
         </tr>
         <tr>
           
-            <td><input name="city" placeholder="City" type="text" class="form-control"></td>
+            <td><input name="city" placeholder="City" type="text" class="form-control" required></td>
             
         </tr>
         <tr>
           
-            <td><input name="district" placeholder="District" type="text" class="form-control"></td>
+            <td><input name="district" placeholder="District" type="text" class="form-control" required></td>
             
         </tr>
         <tr>
            
-            <td><input name="phone" placeholder="Phone No" type="number" pattern=".{12}" class="form-control"></td>
+            <td><input name="phone" placeholder="Phone No" type="number" pattern=".{12}" class="form-control" required></td>
            
         </tr>
         <tr>
            
-            <td><input name="cmail" placeholder="Email Id" type="text" class="form-control"></td>
+            <td><input name="cmail" placeholder="Email Id" type="text" class="form-control" required></td>
           
         </tr>
         <tr>
             
-            <td><input name="password" placeholder="Password" type="password" class="form-control"></td>
+            <td><input name="password" placeholder="Password" type="password" class="form-control" required></td>
            
         </tr>
         <tr>
            
-            <td><input name="confirmpassword" placeholder="Confirm Password" type="password" class="form-control"></td>
+            <td><input name="confirmpassword" placeholder="Confirm Password" type="password" class="form-control" required></td>
            
         </tr>
         <tr>
@@ -155,9 +155,11 @@ td,h3,h6,h2{
         </tr>
         </table>
         </form>
+        
         </div>
-        </div>
-        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+     </div>
+     <div class="col col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6"></div>
+<div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">   
         @error('name')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror 
@@ -182,11 +184,8 @@ td,h3,h6,h2{
         @error('confirmpassword')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
-        </div>
-    </div>
 </div>
-
-
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
 </html>

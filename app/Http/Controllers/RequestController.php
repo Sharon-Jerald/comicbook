@@ -72,6 +72,19 @@ class RequestController extends Controller
 
     public function rqststore(Request $request)
     {
+        $customMessages = [
+            'rbname.required'  => 'The name field is required to be filled',
+            'rbauthor.required' => 'The author field is required to be filled',
+            'rbpublisher.required'  => 'The genre field is required to be filled',
+            'rbqty.required' => 'The publisher field is required to be filled'
+          ];
+       $request->validate([
+           'rbname'=>'required',
+           'rbauthor'=>'required',
+           'rbpublisher'=>'required',
+           'rbqty'=>'required'
+       ], $customMessages);
+
         $getRBCid= request('cid');
         $getRBName= request('rbname');
         $getRBAuthor= request('rbauthor');
@@ -87,6 +100,12 @@ class RequestController extends Controller
         $rqstbook->rbqty=$getRBQty;
         
         $rqstbook->save();
+        if($save){
+            echo "<script>alert('Successfully Added');window.location='/custhome';</script>";
+        }else{
+            return back()->with('fail','Something went wrong,try again!!!');
+        }
+
 
         return view('custhome');
     }
@@ -125,6 +144,20 @@ class RequestController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $customMessages = [
+            'rbname.required'  => 'The name field is required to be filled',
+            'rbauthor.required' => 'The author field is required to be filled',
+            'rbpublisher.required'  => 'The genre field is required to be filled',
+            'rbqty.required' => 'The publisher field is required to be filled'
+          ];
+       $request->validate([
+           'rbname'=>'required',
+           'rbauthor'=>'required',
+           'rbpublisher'=>'required',
+           'rbqty'=>'required'
+       ], $customMessages);
+
+
         $rbook=RequestbookModel::find($id);
 
         $getRBCid= request('cid');
@@ -141,6 +174,11 @@ class RequestController extends Controller
         $rbook->rbqty=$getRBQty;
         
         $rbook->save();
+        if($save){
+            echo "<script>alert('Successfully Added');window.location='/custhome';</script>";
+        }else{
+            return back()->with('fail','Something went wrong,try again!!!');
+        }
 
         return redirect('/viewrequest');
       
@@ -158,7 +196,7 @@ class RequestController extends Controller
         
             $data=RequestbookModel::find($id);
             $data->delete();
-            return redirect('/viewrequest');
+            return redirect('/custhome');
          
 
     }
@@ -169,6 +207,6 @@ class RequestController extends Controller
 
         $rbook->delete();
 
-        return redirect('/viewrequest');
+        return redirect('/custhome');
     }
 }

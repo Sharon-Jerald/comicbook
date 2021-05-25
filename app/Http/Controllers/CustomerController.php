@@ -138,7 +138,7 @@ class CustomerController extends Controller
            'address'=>'required',
            'city'=>'required',
            'district'=>'required',
-           'phone'=>'required',
+           'phone'=>'required|digits:12',
            'cmail'=>'required|email|unique:customer_models',
            'password'=>'required|min:5|max:12',
            'confirmpassword'=>'required'
@@ -219,7 +219,7 @@ class CustomerController extends Controller
     public function dashboard()
     {
         $data = ['LoggedUserInfo'=>CustomerModel::where('cmail','=', session('LoggedUser'))->first()];
-        return view ('welcome',$data);
+        return view ('index',$data);
     }
     /**
      * Display the specified resource.

@@ -40,11 +40,11 @@ td,th,h2{
 }
 .s1{
         position: absolute;
-        top:300px;
+        top:400px;
         left: 65%;
         transform: translate(-50%,-50%);
         width: 890px;
-        height: 400px;
+        height: 600px;
        border-radius:5px;
         box-sizing: border-box;
         background: rgba(0,0,0,0.9);

@@ -135,7 +135,7 @@ td,th,h2{
     <td>{{ $book->bprice }}</td>
     <td>{{ $book->bstock }}</td>
     <td><img width="150" height="100" src="{{ URL ::asset('assets/book_img/'.$book->bimage) }}"></td>
-    <td><a class="btn btn-warning" href={{"/editview/".$book->id}}>VIEW</a></td>
+    <td><a class="btn btn-warning" href={{"/editview/".$book->id}}>Update</a></td>
     <td> <a class="btn btn-danger"  href={{"/deleteview/".$book->id}}>Remove </a></td>
 
 </tr>

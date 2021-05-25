@@ -20,7 +20,7 @@ use App\Http\Controllers\RequestController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/test', function () {
     return view('test');

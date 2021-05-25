@@ -100,13 +100,13 @@ class BookController extends Controller
     {
         $customMessages = [
             'bname.required'  => 'The name field is required to be filled',
-            'bauthor.required' => 'The address field is required to be filled',
-            'bgenre.required'  => 'The city field is required to be filled',
-            'bpublisher.required' => 'The district field is required to be filled',
-            'bdescription.required'  => 'The phone no field is required to be filled',
-            'bimage.required' => 'The mail id field is required to be filled',
-            'bprice.required'  => 'The password field is required to be filled',
-            'bstock.required' => 'The confirm password field is required to be filled'
+            'bauthor.required' => 'The author field is required to be filled',
+            'bgenre.required'  => 'The genre field is required to be filled',
+            'bpublisher.required' => 'The publisher field is required to be filled',
+            'bdescription.required'  => 'The description no field is required to be filled',
+            'bimage.required' => 'The image field is required to be filled',
+            'bprice.required'  => 'The price field is required to be filled',
+            'bstock.required' => 'The stock field is required to be filled'
           ];
        $request->validate([
            'bname'=>'required',
@@ -147,7 +147,7 @@ class BookController extends Controller
 
         $save=$book->save();
         if($save){
-            echo "<script>alert('Successfully Registered');window.location='/viewbook';</script>";
+            echo "<script>alert('Successfully Added');window.location='/viewbook';</script>";
         }else{
             return back()->with('fail','Something went wrong,try again!!!');
         }
@@ -210,6 +210,28 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $customMessages = [
+            'bname.required'  => 'The name field is required to be filled',
+            'bauthor.required' => 'The author field is required to be filled',
+            'bgenre.required'  => 'The genre field is required to be filled',
+            'bpublisher.required' => 'The publisher field is required to be filled',
+            'bdescription.required'  => 'The description no field is required to be filled',
+            'bimage.required' => 'The image field is required to be filled',
+            'bprice.required'  => 'The price field is required to be filled',
+            'bstock.required' => 'The stock field is required to be filled'
+          ];
+       $request->validate([
+           'bname'=>'required',
+           'bauthor'=>'required',
+           'bgenre'=>'required',
+           'bpublisher'=>'required',
+           'bdescription'=>'required',
+           'bimage'=>'required',
+           'bprice'=>'required',
+           'bstock'=>'required'
+       ], $customMessages);
+
+
         $book=BookModel::find($id);
 
         $getBName= request('bname');
@@ -232,8 +254,13 @@ class BookController extends Controller
        $book->bprice=$getBPrice;
        $book->bstock=$getBStock;
 
-        $book->save();
-
+   
+        $save=$book->save();
+        if($save){
+            echo "<script>alert('Successfully Added');window.location='/viewbook';</script>";
+        }else{
+            return back()->with('fail','Something went wrong,try again!!!');
+        }
 
         return redirect('/viewbook');
 
@@ -254,7 +281,7 @@ class BookController extends Controller
         try{
         $data=BookModel::find($id);
         $data->delete();
-        return redirect('/viewbook');
+        return redirect('/adminhome');
              } catch (\Illuminate\Database\QueryException $e) {
         echo "<script>alert('Cannot delete or update a parent row: a foreign key constraint fails');window.location='/adminhome';</script>"; 
     }
@@ -279,7 +306,7 @@ class BookController extends Controller
 
         $book->delete();
 
-        return redirect('/viewbook');
+        return redirect('/adminhome');
     }
 
     public function addtocart(Request $request)

@@ -174,15 +174,15 @@ body {
                <table class="table table-borderless">
     <tr>
         <td>Old Password:</td>
-        <td><input type="text"  name="oldpass" class="form-control"></td>
+        <td><input type="password"  name="oldpass" class="form-control"></td>
     </tr>
     <tr>
         <td>New Password:</td>
-        <td><input type="text"  name="newpass" class="form-control"></td>
+        <td><input type="password"  name="newpass" class="form-control"></td>
     </tr>
     <tr>
         <td>Confirm Password:</td>
-        <td><input type="text"  name="cnewpass" class="form-control"></td>
+        <td><input type="password"  name="cnewpass" class="form-control"></td>
     </tr>
     <tr>
         <td><button class="btn btn-success">RESET</button></td>

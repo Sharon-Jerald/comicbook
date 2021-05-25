@@ -245,7 +245,7 @@ th,td{
     <td>{{ $rbook->rbauthor }}</td>
     <td>{{ $rbook->rbpublisher }}</td>
     <td>{{ $rbook->rbqty }}</td>
-    <td><a class="btn btn-warning" href={{"/editrequest/".$rbook->id}}>EDIT</a></td>
+    <td><a class="btn btn-warning" href={{"/editrequest/".$rbook->id}}>UPDATE</a></td>
     <td><a class="btn btn-danger" href={{"/deleterequest/". $rbook->id}}>DELETE</a></td>
 
 </tr>

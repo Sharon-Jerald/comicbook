@@ -106,7 +106,7 @@ body {
 				<h4 class="modal-title w-100">Awesome!</h4>	
 			</div>
 			<div class="modal-body">
-				<p class="text-center">Your order has been confirmed. Check your email for detials.</p>
+				<p class="text-center">Your order has been confirmed. Check your sms for detials.</p>
 			</div>
 			<div class="modal-footer">
 			<a href="/custhome" class="btn btn-success btn-block" role="button">OK</a>

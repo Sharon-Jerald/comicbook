@@ -128,8 +128,8 @@ body {
               </li>
         </ul>
          </ul>
-          <li><a class="nav-link scrollto active" href="/cartlist">Cart</a></li>
-          <li><a class="nav-link scrollto" href="/profile">Profile</a></li>
+          <li><a class="nav-link scrollto " href="/cartlist">Cart</a></li>
+          <li><a class="nav-link scrollto active" href="/profile">Profile</a></li>
           <li><a class="getstarted scrollto" href="/logout">Logout</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
