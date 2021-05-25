@@ -84,7 +84,7 @@
                         <td>   </td>
                         <td>   </td>
                         <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>Rs.{{ $total }} </strong></h3></td>
+                        <td class="text-right"><h3><strong>Rs. </strong></h3></td>
                     </tr>
                     <tr>
                         <td>   </td>

@@ -254,7 +254,7 @@ class BookController extends Controller
        $book->bprice=$getBPrice;
        $book->bstock=$getBStock;
 
-   
+        $book->save();
         $save=$book->save();
         if($save){
             echo "<script>alert('Successfully Added');window.location='/viewbook';</script>";
@@ -361,7 +361,7 @@ class BookController extends Controller
        $total=$products=DB::table('cart_models')
         ->join('book_models','cart_models.book_id','=','book_models.id') 
         ->where('cart_models.customer_id',$customerId)
-        ->DB::raw('sum(cart_models.qtyprice)');
+        ->sum('cart_models.qtyprice');
 
       $test = CartModel::with('book')
       ->join('book_models','cart_models.book_id','=','book_models.id') 
@@ -370,7 +370,7 @@ class BookController extends Controller
       ->get();
    
 
-       return view('cartlist',['data'=>$data,'test'=>$test,'total'=>$products]);
+       return view('cartlist',['data'=>$data,'test'=>$test,'total'=>$total]);
     }
 
 
