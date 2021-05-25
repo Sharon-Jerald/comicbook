@@ -256,7 +256,7 @@ class CustomerController extends Controller
         {
             if($getnewpass==$confirmpass)
             {
-                $change=LoginModel::where('Username','=',$getemail)->update(['Password'=>$getnewpass]); 
+                $change=LoginModel::where('username','=',$getemail)->update(['password'=>$getnewpass]); 
                 return redirect('/login');
       
             }
