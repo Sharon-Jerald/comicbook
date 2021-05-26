@@ -35,7 +35,10 @@
 
 </head>
 <body>
-
+<?php
+use App\Http\Controllers\BookController;
+$tp=BookController::totalprice();
+?>
 <br><br>
 <div class="container">
     <div class="row">
@@ -84,7 +87,7 @@
                         <td>   </td>
                         <td>   </td>
                         <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>Rs.{{ $total }} </strong></h3></td>
+                        <td class="text-right"><h3><strong>Rs.{{ $tp }} </strong></h3></td>
                     </tr>
                     <tr>
                         <td>   </td>

@@ -358,10 +358,10 @@ class BookController extends Controller
        ->select('cart_models.*')
        ->get();
 
-       $total=$products=DB::table('cart_models')
-        ->join('book_models','cart_models.book_id','=','book_models.id') 
-        ->where('cart_models.customer_id',$customerId)
-        ->sum('cart_models.qtyprice');
+    //    $total=$products=DB::table('cart_models')
+    //     ->join('book_models','cart_models.book_id','=','book_models.id') 
+    //     ->where('cart_models.customer_id',$customerId)
+    //     ->sum('cart_models.qtyprice');
 
       $test = CartModel::with('book')
       ->join('book_models','cart_models.book_id','=','book_models.id') 
@@ -370,7 +370,26 @@ class BookController extends Controller
       ->get();
    
 
-       return view('cartlist',['data'=>$data,'test'=>$test,'total'=>$total]);
+       return view('cartlist',['data'=>$data,'test'=>$test]);
+    }
+
+    static public function totalprice(){
+        $custid= CustomerModel::where('cmail','=', session('LoggedUser'))->first();
+        $customerId=$custid->id;
+        $carts=DB::table('cart_models')
+        ->where('customer_id','=', $customerId)->get();
+
+        $total=0;
+        foreach($carts as $cart)
+        {
+            $products=DB::table('book_models')
+            ->where('id','=',$cart->book_id)->get();
+            foreach($products as $product)
+            {
+                $total=$total+($cart->qtyprice);
+            }
+        }
+    return $total;
     }
 
 
