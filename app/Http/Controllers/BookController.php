@@ -394,23 +394,25 @@ class BookController extends Controller
 
 
     static public function payment()
-{
-    $custid= CustomerModel::where('cmail','=', session('LoggedUser'))->first();
-    $customerId=$custid->id;
-    $carts=DB::table('cart_models')
-    ->where('customer_id','=', $customerId)->get();
-
-    $total=0;
-    foreach($carts as $cart)
     {
-        $products=DB::table('book_models')
-        ->where('id','=',$cart->book_id)->get();
-        foreach($products as $product)
+        $custid= CustomerModel::where('cmail','=', session('LoggedUser'))->first();
+        $customerId=$custid->id;
+        $carts=DB::table('cart_models')
+        ->where('customer_id','=', $customerId)->get();
+    
+        $total=0;
+        foreach($carts as $cart)
         {
-            $total=$total+($cart->qtyprice);
+            $products=DB::table('book_models')
+            ->where('id','=',$cart->book_id)->get();
+            foreach($products as $product)
+            {
+                $total=$total+($cart->qtyprice);
+            }
         }
-    }
-return $total;
+   
+    return view('payment',['total'=>$total]);
+    
 }
 
 public function order(Request $request)
