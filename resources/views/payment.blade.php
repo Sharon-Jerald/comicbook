@@ -16,6 +16,10 @@
     </style>
 </head>
 <body>
+<?php
+use App\Http\Controllers\BookController;
+$tp=BookController::totalprice();
+?>
 <div class="container">
 <center><h4 style="font-family:courier;"><b>Delivery Address</b> is same as the address when you sign up!!! <u><a  href="/editprofile">Change address </a></u></h4></center>
     
@@ -74,7 +78,7 @@
             </div>
             
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon"></span>Rs. {{ $total }}</span> Final Payment</a>
+                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon"></span>Rs. {{ $tp }}</span> Final Payment</a>
                 </li>
             </ul>
    
