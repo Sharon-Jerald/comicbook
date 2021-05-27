@@ -95,6 +95,8 @@ route::get('/editview/{id}', [BookController::class,'edit']);
 
 route::get('/deleteview/{id}', [BookController::class,'deleteview']);
 
+route::get('/cancelorder/{id}', [BookController::class,'cancelorder']);
+
 route::post('/bookeditprocess/{id}', [BookController::class,'update']);
 
 route::post('/bookdeleteprocess/{id}',[BookController::class,'destroy']);

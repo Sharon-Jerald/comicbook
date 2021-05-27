@@ -127,7 +127,7 @@ body {
 <body>
   <br><br>
 <section class="py-5 header">
-    <div class="container py-4">
+    <div class="container">
         
 
         <div class="row">
@@ -149,10 +149,11 @@ body {
 
             <div class="col-lg-9">
                 <!-- Tabs content -->
-                <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-content" style=" width: 920px;" id="v-pills-tabContent">
+
                     <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                     <center><h2>MY ORDERS</h2></center>
-            <table style="width:780px;" class="table ">
+            <table style="width:875px;" class="table ">
                 <thead>
                     <tr>
                         <th>Product</th>
@@ -160,12 +161,13 @@ body {
                         <th >Price</th>
                         <th>Total</th>
                         <th>Date </th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                 @foreach($orders as $t)
                     <tr>
-                        <td class="col-sm-8 col-md-6">
+                        <td class="col-sm-5 col-md-4">
                         <div class="media">
                             <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{ URL ::asset('assets/book_img/'.$t->book->bimage) }}" style="width: 72px; height: 72px;"> </a>
                             <div class="media-body">
@@ -180,6 +182,7 @@ body {
                         <td ><strong>Rs. {{ $t->book->bprice }}</strong></td>
                         <td ><strong>Rs. {{ $t->ototal }}</strong></td>
                         <td><strong> {{ $t->odate }}</strong></td>
+                        <td> <a class="btn btn-danger"  href={{"/cancelorder/".$t->id}}>Cancel </a></td>
                     </tr>
                     @endforeach
                    

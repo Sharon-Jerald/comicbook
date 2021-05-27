@@ -287,6 +287,17 @@ class BookController extends Controller
     }
     }
 
+    public function cancelorder($id)
+    {
+        
+            $data=OrderModel::find($id);
+            $data->delete();
+            return redirect('/profile');
+         
+
+    }
+
+
     public function removecart($id)
     {
         $data=CartModel::find($id);
