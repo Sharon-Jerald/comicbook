@@ -22,7 +22,7 @@ class CreateOrderModelsTable extends Migration
             $table->String('oqty');
             $table->String('oprice');
             $table->String('ototal');
-            $table->timestamps('odate');
+            $table->date('odate');
             $table->timestamps();
         });
     }
