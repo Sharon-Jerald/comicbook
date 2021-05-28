@@ -174,6 +174,7 @@ class RequestController extends Controller
         $rbook->rbqty=$getRBQty;
         
         $rbook->save();
+        $save=$rbook->save();
         if($save){
             echo "<script>alert('Successfully Added');window.location='/custhome';</script>";
         }else{
