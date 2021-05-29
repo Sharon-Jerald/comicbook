@@ -244,6 +244,10 @@ class BookController extends Controller
         $getBStock= request('bstock');
        $name=$getBImage->getClientOriginalName();
 
+       
+       $getBImage->move(public_path('assets/book_img'),$name);        
+
+      
         
        $book->bname=$getBName;
        $book->bauthor= $getBAuthor;
