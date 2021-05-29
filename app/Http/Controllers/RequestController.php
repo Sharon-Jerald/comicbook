@@ -176,7 +176,7 @@ class RequestController extends Controller
         $rbook->save();
         $save=$rbook->save();
         if($save){
-            echo "<script>alert('Successfully Added');window.location='/custhome';</script>";
+            echo "<script>alert('Successfully updated');window.location='/custhome';</script>";
         }else{
             return back()->with('fail','Something went wrong,try again!!!');
         }
@@ -197,8 +197,8 @@ class RequestController extends Controller
         
             $data=RequestbookModel::find($id);
             $data->delete();
-            return redirect('/custhome');
-         
+            echo "<script>alert('Successfully removed!!!');window.location='/custhome';</script>";
+                    
 
     }
 

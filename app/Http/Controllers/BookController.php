@@ -283,7 +283,7 @@ class BookController extends Controller
         $data->delete();
         return redirect('/adminhome');
              } catch (\Illuminate\Database\QueryException $e) {
-        echo "<script>alert('Cannot delete or update a parent row: a foreign key constraint fails');window.location='/adminhome';</script>"; 
+        echo "<script>alert('Cannot delete...customer have placed this product in cart!!!!');window.location='/adminhome';</script>"; 
     }
     }
 
@@ -302,8 +302,8 @@ class BookController extends Controller
     {
         $data=CartModel::find($id);
         $data->delete();
-        return redirect('/customerbook');
-
+        echo "<script>alert('Successfully removed!!!');window.location='/customerbook';</script>";
+    
     }
     /**
      * Remove the specified resource from storage.

@@ -149,11 +149,11 @@ body {
 
             <div class="col-lg-9">
                 <!-- Tabs content -->
-                <div class="tab-content" style=" width: 920px;" id="v-pills-tabContent">
+                <div class="tab-content" style=" width: 900px;" id="v-pills-tabContent">
 
                     <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                     <center><h2>MY ORDERS</h2></center>
-            <table style="width:875px;" class="table ">
+            <table style="width:860px;" class="table ">
                 <thead>
                     <tr>
                         <th>Product</th>
@@ -182,7 +182,7 @@ body {
                         <td ><strong>Rs. {{ $t->book->bprice }}</strong></td>
                         <td ><strong>Rs. {{ $t->ototal }}</strong></td>
                         <td><strong> {{ $t->odate }}</strong></td>
-                        <td> <a class="btn btn-danger"  href={{"/cancelorder/".$t->id}}>Cancel </a></td>
+                      
                     </tr>
                     @endforeach
                    
