@@ -77,11 +77,6 @@ route::get('/editprofile/{id}', [CustomerController::class,'edit']);
 route::post('/customereditprocess/{id}', [CustomerController::class,'update']);
 
 
-
-route::get('/editstatus/{id}', [BookController::class,'editorder']);
-
-route::post('/statuseditprocess/{id}', [BookController::class,'updateorder']);
-
 route::get('/success',[BookController::class,'success']);
 
 route::get('/addbook',[BookController::class,'create']);
