@@ -43,7 +43,7 @@ td,th,h2{
         top:400px;
         left: 65%;
         transform: translate(-50%,-50%);
-        width: 890px;
+        width: 930px;
         height: 600px;
        border-radius:5px;
         box-sizing: border-box;
@@ -114,6 +114,7 @@ td,th,h2{
 <center>
 <table class="table " style="width: 850px;">
 <tr>
+<th>CUSTOMER ID</th>
 <th>CUSTOMER NAME</th>
     <th>NAME</th>
     <th>AUTHOR </th>
@@ -121,9 +122,11 @@ td,th,h2{
     <th>PRICE</th>
     <th>TOTAL</th>
     <th>DATE</th>
+    <th>DATE</th>
 </tr>
 @foreach($vieworder as $order)
 
+<td>{{ $order->customer->id }}</td>
 <td>{{ $order->customer->cname }}</td>
     <td>{{ $order->book->bname }}</td>
     <td>{{ $order->book->bauthor }}</td>
@@ -131,6 +134,8 @@ td,th,h2{
     <td>{{ $order->oprice}}</td>
     <td>{{ $order->ototal }}</td>
     <td>{{ $order->odate }}</td>
+    <td><a class="btn btn-warning" href={{"/editstatus/".$order->id}}>Status</a></td>
+    
 </tr>
 
 @endforeach
