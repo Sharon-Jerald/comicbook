@@ -137,6 +137,7 @@ td,th,h2{
                         <th >Price</th>
                         <th>Total</th>
                         <th>Date </th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -157,6 +158,7 @@ td,th,h2{
                         <td ><strong>Rs. {{ $t->book->bprice }}</strong></td>
                         <td ><strong>Rs. {{ $t->ototal }}</strong></td>
                         <td><strong> {{ $t->odate }}</strong></td>
+                        <td><strong> {{ $t->ostatus }}</strong></td>
                     </tr>
                     @endforeach
                    
