@@ -201,7 +201,7 @@ class BookController extends Controller
         return view('editstatus',compact('orders'));
     }
 
-    public function update(Request $request, $id)
+    public function updateorder(Request $request, $id)
     {
         $customMessages = [
             'ostatus.required'  => 'The status field is required to be filled',
