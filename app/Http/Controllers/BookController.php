@@ -487,7 +487,7 @@ public function order(Request $request)
                 $order->oprice=$product->bprice;
                 $order->ototal=($cart->qty)*($product->bprice);
                 $order->odate=$cdate;
-                $order->odate="Under Processing";
+                $order->ostatus="Under Processing";
                
                
                 $order->save(); 
