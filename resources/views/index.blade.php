@@ -51,7 +51,7 @@
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto " href="/login">Login</a></li>
           <li><a class="nav-link scrollto " href="/register">Register</a></li>
-          
+          <li><a class="nav-link scrollto " href="/adminregister">Register</a></li>
           
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
