@@ -195,12 +195,49 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function editorder($id)
+    {
+        $orders=OrderModel::find($id);
+        return view('editstatus',compact('orders'));
+    }
+
+    public function updateorder(Request $request, $id)
+    {
+        $customMessages = [
+            'ostatus.required'  => 'The status field is required to be filled',
+            
+          ];
+       $request->validate([
+           'ostatus'=>'required',
+          
+       ], $customMessages);
+
+
+        $order=OrderModel::find($id);
+
+        $getBName= request('ostatus');
+        
+        
+       $order->ostatus=$getBName;
+      
+
+        $order->save();
+        $save=$order->save();
+        if($save){
+            echo "<script>alert('Successfully Updated');window.location='/adminvieworder';</script>";
+        }else{
+            return back()->with('fail','Something went wrong,try again!!!');
+        }
+
+        return redirect('/adminvieworder');
+
+    }
+
     public function edit($id)
     {
         $books=BookModel::find($id);
         return view('editview',compact('books'));
     }
-
     /**
      * Update the specified resource in storage.
      *

@@ -122,6 +122,7 @@ td,th,h2{
     <th>PRICE</th>
     <th>TOTAL</th>
     <th>DATE</th>
+    <th>DATE</th>
 </tr>
 @foreach($vieworder as $order)
 
@@ -133,6 +134,8 @@ td,th,h2{
     <td>{{ $order->oprice}}</td>
     <td>{{ $order->ototal }}</td>
     <td>{{ $order->odate }}</td>
+    <td><a class="btn btn-warning" href={{"/editstatus/".$order->id}}>Status</a></td>
+    
 </tr>
 
 @endforeach
